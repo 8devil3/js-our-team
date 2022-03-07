@@ -2,32 +2,32 @@ const teamMembers = [
     {
         nome: 'Wayne Barnett',
         ruolo: 'Founder & CEO',
-        foto: 'wayne-barnett-founder-ceo.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Angela Carrol',
         ruolo: 'Chief Editor',
-        foto: 'angela-caroll-chief-editor.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Walter Gordon',
         ruolo: 'Office Manager',
-        foto: 'walter-gordon-office-manager.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Angela Lopez',
         ruolo: 'Social Media Manager',
-        foto: 'angela-lopez-social-media-manager.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Scott Estrada',
         ruolo: 'Developer',
-        foto: 'scott-estrada-developer.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Barbara Ramos',
         ruolo: 'Graphic Designer',
-        foto: 'barbara-ramos-graphic-designer.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     }
 ];
 
@@ -42,24 +42,10 @@ const inputPhoto = document.querySelector('#image');
 btnAdd.addEventListener('click', addMember);
 
 
-// iterazione per i membri noti
+//stampo le card quando carico la pagina. Le card stampate sono quelle nell'array definito all'inizio.
 for (let i = 0; i < teamMembers.length; i++) {
-
-    //stampo le card
-    let card = document.createElement('div')
-    card.classList.add('team-card');
-    card.innerHTML = `
-        <div class="card-image">
-            <img src="../img/${teamMembers[i]['foto']}" alt="${teamMembers[i]['nome']}" />
-        </div>
-        <div class="card-text">
-            <h3>${teamMembers[i]['nome']}</h3>
-            <p>${teamMembers[i]['ruolo']}</p>
-        </div>`
-
-    teamContainer.appendChild(card);
+    printCards(i);
 }
-
 
 
 
@@ -71,24 +57,32 @@ function addMember() {
     newMember = {
         nome : inputName.value,
         ruolo : inputRole.value,
-        foto : inputPhoto.value
+        foto : 'https://picsum.photos/370/400?random='
     };
     
     //invio l'oggetto nell'array principale
     teamMembers.push(newMember);
     
-    //stampo la card
+    //stampo la nuova card
+    printCards(teamMembers.length-1);
+}
+
+
+
+//stampa card
+function printCards(index) {
+
     let card = document.createElement('div')
     card.classList.add('team-card');
+
     card.innerHTML = `
-        <div class="card-image">
-            <img src="../img/${newMember.foto}" alt="${newMember.nome}" />
-        </div>
-        <div class="card-text">
-            <h3>${newMember.nome}</h3>
-            <p>${newMember.ruolo}</p>
-        </div>`
+    <div class="card-image">
+        <img src="${teamMembers[index]['foto']}${[index]}" alt="${teamMembers[index]['nome']}" />
+    </div>
+    <div class="card-text">
+        <h3>${teamMembers[index]['nome']}</h3>
+        <p>${teamMembers[index]['ruolo']}</p>
+    </div>`
 
     teamContainer.appendChild(card);
-    
 }
