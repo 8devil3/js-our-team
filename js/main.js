@@ -2,52 +2,56 @@ const teamMembers = [
     {
         nome: 'Wayne Barnett',
         ruolo: 'Founder & CEO',
-        foto: 'wayne-barnett-founder-ceo.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Angela Carrol',
         ruolo: 'Chief Editor',
-        foto: 'angela-caroll-chief-editor.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Walter Gordon',
         ruolo: 'Office Manager',
-        foto: 'walter-gordon-office-manager.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Angela Lopez',
         ruolo: 'Social Media Manager',
-        foto: 'angela-lopez-social-media-manager.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Scott Estrada',
         ruolo: 'Developer',
-        foto: 'scott-estrada-developer.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     },
     {
         nome: 'Barbara Ramos',
         ruolo: 'Graphic Designer',
-        foto: 'barbara-ramos-graphic-designer.jpg'
+        foto: 'https://picsum.photos/370/400?random='
     }
 ];
 
 const teamContainer = document.querySelector('.team-container');
 
-
+// iterazione tra i membri
 for (let i = 0; i < teamMembers.length; i++) {
+    printCards(i);
+}
+
+
+function printCards(index) {
 
     let card = document.createElement('div')
-
     card.classList.add('team-card');
 
     card.innerHTML = `
-        <div class="card-image">
-            <img src="../img/${teamMembers[i]['foto']}" alt="${teamMembers[i]['nome']}" />
-        </div>
-        <div class="card-text">
-            <h3>${teamMembers[i]['nome']}</h3>
-            <p>${teamMembers[i]['ruolo']}</p>
-        </div>`
+    <div class="card-image">
+        <img src="${teamMembers[index]['foto']}${[index]}" alt="${teamMembers[index]['nome']}" />
+    </div>
+    <div class="card-text">
+        <h3>${teamMembers[index]['nome']}</h3>
+        <p>${teamMembers[index]['ruolo']}</p>
+    </div>`
 
     teamContainer.appendChild(card);
 }
