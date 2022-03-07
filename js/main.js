@@ -1,33 +1,35 @@
+const urlImg = 'https://picsum.photos/400/429?random='
+
 const teamMembers = [
     {
         nome: 'Wayne Barnett',
         ruolo: 'Founder & CEO',
-        foto: 'https://picsum.photos/370/400?random='
+        foto: urlImg
     },
     {
         nome: 'Angela Carrol',
         ruolo: 'Chief Editor',
-        foto: 'https://picsum.photos/370/400?random='
+        foto: urlImg
     },
     {
         nome: 'Walter Gordon',
         ruolo: 'Office Manager',
-        foto: 'https://picsum.photos/370/400?random='
+        foto: urlImg
     },
     {
         nome: 'Angela Lopez',
         ruolo: 'Social Media Manager',
-        foto: 'https://picsum.photos/370/400?random='
+        foto: urlImg
     },
     {
         nome: 'Scott Estrada',
         ruolo: 'Developer',
-        foto: 'https://picsum.photos/370/400?random='
+        foto: urlImg
     },
     {
         nome: 'Barbara Ramos',
         ruolo: 'Graphic Designer',
-        foto: 'https://picsum.photos/370/400?random='
+        foto: urlImg
     }
 ];
 
