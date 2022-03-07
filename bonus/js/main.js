@@ -39,19 +39,15 @@ const inputPhoto = document.querySelector('#image');
 
 
 
-
-
-
 btnAdd.addEventListener('click', addMember);
 
 
 // iterazione per i membri noti
 for (let i = 0; i < teamMembers.length; i++) {
 
+    //stampo le card
     let card = document.createElement('div')
-
     card.classList.add('team-card');
-
     card.innerHTML = `
         <div class="card-image">
             <img src="../img/${teamMembers[i]['foto']}" alt="${teamMembers[i]['nome']}" />
@@ -70,19 +66,19 @@ for (let i = 0; i < teamMembers.length; i++) {
 // aggiunta di nuovi membri
 function addMember() {
     let newMember = {};
-    let card = document.createElement('div')
-
+    
     //nuovo oggetto membro
     newMember = {
         nome : inputName.value,
         ruolo : inputRole.value,
         foto : inputPhoto.value
     };
-
+    
     //invio l'oggetto nell'array principale
     teamMembers.push(newMember);
-
+    
     //stampo la card
+    let card = document.createElement('div')
     card.classList.add('team-card');
     card.innerHTML = `
         <div class="card-image">
