@@ -29,5 +29,33 @@ const teamMembers = [
         ruolo: 'Graphic Designer',
         foto: 'barbara-ramos-graphic-designer.jpg'
     }
-]
+];
 
+const teamContainer = document.querySelector('.team-container');
+
+let memberName;
+let memberRole;
+let memberPhoto;
+
+
+for (let i = 0; i < teamMembers.length; i++) {
+
+    let card = document.createElement('div')
+
+    memberName = teamMembers[i]['nome'];
+    memberRole = teamMembers[i]['ruolo'];
+    memberPhoto = teamMembers[i]['foto'];
+
+    card.classList.add('team-card');
+
+    card.innerHTML = `
+        <div class="card-image">
+            <img src="img/${memberPhoto}" alt="${memberName}" />
+        </div>
+        <div class="card-text">
+            <h3>${memberName}</h3>
+            <p>${memberRole}</p>
+        </div>`
+
+    teamContainer.appendChild(card);
+}
