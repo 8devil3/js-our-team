@@ -1,4 +1,4 @@
-const urlImg = 'https://picsum.photos/400/429?random='
+const urlImg = 'https://picsum.photos/400/429?random=';
 
 const teamMembers = [
     {
