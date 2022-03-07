@@ -44,7 +44,7 @@ btnAdd.addEventListener('click', addMember);
 
 //stampo le card quando carico la pagina. Le card stampate sono quelle nell'array definito all'inizio.
 for (let i = 0; i < teamMembers.length; i++) {
-    printCards(i);
+    printCards(teamMembers[i], i);
 }
 
 
@@ -64,25 +64,25 @@ function addMember() {
     teamMembers.push(newMember);
     
     //stampo la nuova card
-    printCards(teamMembers.length-1);
+    printCards(teamMembers[teamMembers.length-1], teamMembers.length-1);
 }
 
 
 
 //stampa card
-function printCards(index) {
+function printCards(member, index) {
 
     let card = document.createElement('div')
     card.classList.add('team-card');
-
+    
     card.innerHTML = `
     <div class="card-image">
-        <img src="${teamMembers[index]['foto']}${[index]}" alt="${teamMembers[index]['nome']}" />
+        <img src="${member.foto}${index}" alt="${member.nome}" />
     </div>
     <div class="card-text">
-        <h3>${teamMembers[index]['nome']}</h3>
-        <p>${teamMembers[index]['ruolo']}</p>
+        <h3>${member.nome}</h3>
+        <p>${member.ruolo}</p>
     </div>`
-
+    
     teamContainer.appendChild(card);
 }

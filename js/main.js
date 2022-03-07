@@ -35,22 +35,22 @@ const teamContainer = document.querySelector('.team-container');
 
 // iterazione tra i membri
 for (let i = 0; i < teamMembers.length; i++) {
-    printCards(i);
+    printCards(teamMembers[i], i);
 }
 
 
-function printCards(index) {
+function printCards(member, index) {
 
     let card = document.createElement('div')
     card.classList.add('team-card');
 
     card.innerHTML = `
     <div class="card-image">
-        <img src="${teamMembers[index]['foto']}${[index]}" alt="${teamMembers[index]['nome']}" />
+        <img src="${member.foto}${index}" alt="${member.nome}" />
     </div>
     <div class="card-text">
-        <h3>${teamMembers[index]['nome']}</h3>
-        <p>${teamMembers[index]['ruolo']}</p>
+        <h3>${member.nome}</h3>
+        <p>${member.ruolo}</p>
     </div>`
 
     teamContainer.appendChild(card);
