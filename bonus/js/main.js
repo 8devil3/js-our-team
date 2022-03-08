@@ -43,7 +43,7 @@ const inputPhoto = document.querySelector('#image');
 const form = document.querySelector('.form-container');
 
 
-
+//intercetto il submit del form (che include il click sul pulsante o il tasto enter)
 form.addEventListener('submit', addMember);
 
 
