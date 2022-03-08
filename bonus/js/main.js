@@ -40,10 +40,11 @@ const btnAdd = document.querySelector('#addMemberButton');
 const inputName = document.querySelector('#name');
 const inputRole = document.querySelector('#role');
 const inputPhoto = document.querySelector('#image');
+const form = document.querySelector('.form-container');
 
 
 
-btnAdd.addEventListener('click', addMember);
+form.addEventListener('submit', addMember);
 
 
 //stampo le card quando carico la pagina. Le card stampate sono quelle nell'array definito all'inizio.
@@ -54,7 +55,7 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 
 // aggiunta di nuovi membri
-function addMember() {
+function addMember(event) {
     let newMember = {};
     
     //nuovo oggetto membro
@@ -73,6 +74,9 @@ function addMember() {
     //reset del form
     inputName.value = '';
     inputRole.value = '';
+
+    //prevengo il refresh della pagina, che avviene di default quando si invia un submit ad un form
+    event.preventDefault();
 }
 
 
