@@ -69,6 +69,10 @@ function addMember() {
     
     //stampo la nuova card
     printCards(teamMembers[teamMembers.length-1], teamMembers.length-1);
+
+    //reset del form
+    inputName.value = '';
+    inputRole.value = '';
 }
 
 
@@ -76,17 +80,17 @@ function addMember() {
 //stampa card
 function printCards(member, index) {
 
-    let card = document.createElement('div')
+    let card = document.createElement('div');
     card.classList.add('team-card');
     
     card.innerHTML = `
-    <div class="card-image">
-        <img src="${member.foto}${index}" alt="${member.nome}" />
-    </div>
-    <div class="card-text">
-        <h3>${member.nome}</h3>
-        <p>${member.ruolo}</p>
-    </div>`
+        <div class="card-image">
+            <img src="${member.foto}${index}" alt="${member.nome}" />
+        </div>
+        <div class="card-text">
+            <h3>${member.nome}</h3>
+            <p>${member.ruolo}</p>
+        </div>`
     
     teamContainer.appendChild(card);
 }
